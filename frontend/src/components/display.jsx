@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import TopBar from "./topbar";
 import axios from "axios";
+import image from "./../img/delete.jpg";
 const Display =()=>{
     const navigate = useNavigate();
     const [todoList, setTodoList] = useState([]);
@@ -69,7 +70,7 @@ const Display =()=>{
     
         {todoList.map((item)=>(
             
-                <div className="text-white h-36 rounded-2xl bg-blue-200    " key={item.id}>
+                <div className="text-white h-36 rounded-2xl bg-blue-200   px-4 " key={item.id}>
             
                  <h2>
                     Title: {item.title}
@@ -81,7 +82,8 @@ const Display =()=>{
                 <h3>
                     completed: {item.completed? "True":"False"}
                 </h3>
-                <button className="rounded-2xl bg-red-400 " onClick={()=>{deleteItem(item.id)}}>Del</button>
+                <button className="rounded-2xl bg-red-400  w-full mt-6" onClick={()=>{deleteItem(item.id)}}><div className="h-10 grid grid-cols-2 gap-4 bg-blue-200 ">
+                <img className="h-5 w-5 rounded-full" src={image}/><img className="h-5 w-5 rounded-full" src={image}/></div></button>
 
             
             </div>
