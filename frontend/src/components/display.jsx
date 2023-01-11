@@ -36,7 +36,8 @@ const Display =()=>{
       };
       const deleteItem = async(id)=>{
         try{
-        await axios.delete(`http://localhost:8000/api/todos/${id}`)
+        await axios.delete(`http://localhost:8000/api/todos/${id}/`
+        )
         .then(response => {
           // handle success
           alert("sucess")
